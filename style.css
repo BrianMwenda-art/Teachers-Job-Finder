@@ -1,5 +1,5 @@
 :root {
-    --primary: #6b84bb;
+    --primary: #6c6bbb;
     --primary-dark: #142041;
     --secondary: #f3f4f6;
     --text: #1f2937;
@@ -249,4 +249,59 @@ body {
     .filters {
         flex-direction: column;
     }
+}
+/* Add this to your style.css */
+body {
+    background: 
+        linear-gradient(rgba(255, 255, 255, 0.85), 
+        rgba(255, 255, 255, 0.85)),
+        url('Brian.jpg') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 10vh;
+}
+
+/* For dashboard specifically (if needed) */
+.dashboard-container {
+    background: 
+        linear-gradient(rgba(248, 250, 252, 0.9), 
+        rgba(248, 250, 252, 0.9)),
+        url('Brian.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+body {
+    background: 
+        linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
+        url('Brian.jpg') no-repeat center top; /* Changed from center center to center top */
+    background-size: cover;
+    background-attachment: fixed;
+    /* Crop from bottom by limiting height */
+    background-position-y: top;
+    background-position-x: center;
+    background-size: auto 80vh; /* This will crop vertically */
+    min-height: 80vh;
+}
+
+/* For modern browsers (more precise cropping) */
+@supports (background-position: center top 20%) {
+    body {
+        background-position: center top 20%; /* Crop 20% from bottom */
+        background-size: cover;
+    }
+}
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80vh; /* Crop 20% from bottom (100vh - 80vh) */
+    background: url('Brian.jpg') no-repeat center top;
+    background-size: cover;
+    z-index: -1;
+    opacity: 0.3; /* Adjust if using overlay */
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
 }
