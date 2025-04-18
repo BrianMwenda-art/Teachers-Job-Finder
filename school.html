@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Dashboard - TeacherConnect</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="logo">TeacherConnect</a>
+            <div class="nav-links">
+                <a href="vacancies.html">Vacancies</a>
+                <a href="school.html" class="active">School Dashboard</a>
+                <a href="index.html">Home</a>
+                <a href="teachers.html">Teachers</a>
+                <a href="teacher_login.html">Teacher Login</a>
+                <a href="school_login.html">School Login</a>
+                <a href="#" class="btn-logout">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="dashboard-container">
+        <aside class="sidebar">
+            <div class="profile-summary">
+                <img src="KARU.png" alt="School Logo" class="profile-pic">
+                <h3>Karatina High</h3>
+                <p>Central Province</p>
+            </div>
+            <nav class="dashboard-nav">
+                <a href="#" class="active" data-section="overview">Overview</a>
+                <a href="#" data-section="vacancies">Manage Vacancies</a>
+                <a href="#" data-section="applicants">Applicants</a>
+                <a href="#" data-section="school-profile">School Profile</a>
+                <a href="#" data-section="settings">Settings</a>
+            </nav>
+        </aside>
+
+        <section class="main-content">
+            <!-- Overview Section -->
+            <div id="overview-section" class="dashboard-section active">
+                <h2>School Dashboard</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Active Vacancies</h3>
+                        <p class="stat-value" id="active-vacancies">3</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>New Applications</h3>
+                        <p class="stat-value" id="new-applications">12</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Interviews Scheduled</h3>
+                        <p class="stat-value" id="school-interviews">5</p>
+                    </div>
+                </div>
+
+                <div class="recent-applications">
+                    <h3>Recent Applications</h3>
+                    <div id="recent-applications-container">
+                        <!-- Applications will be loaded here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vacancies Section -->
+            <div id="vacancies-section" class="dashboard-section">
+                <div class="section-header">
+                    <h2>Manage Vacancies</h2>
+                    <button id="add-vacancy-btn" class="btn-primary">+ Add New Vacancy</button>
+                </div>
+                <div id="vacancies-list">
+                    <!-- Vacancies will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Applicants Section -->
+            <div id="applicants-section" class="dashboard-section">
+                <h2>Applicant Management</h2>
+                <div class="applicant-filters">
+                    <select id="vacancy-filter">
+                        <option value="">All Vacancies</option>
+                    </select>
+                    <select id="status-filter">
+                        <option value="">All Statuses</option>
+                        <option value="submitted">Submitted</option>
+                        <option value="reviewed">Reviewed</option>
+                        <option value="interview">Interview</option>
+                        <option value="rejected">Rejected</option>
+                        <option value="hired">Hired</option>
+                    </select>
+                    <button id="filter-applicants-btn" class="btn-primary">Filter</button>
+                </div>
+                <div id="applicants-container">
+                    <!-- Applicants will be loaded here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Add Vacancy Modal -->
+    <div id="vacancy-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Add New Vacancy</h3>
+            <form id="vacancy-form">
+                <div class="form-group">
+                    <label for="vacancy-subject">Subject</label>
+                    <select id="vacancy-subject" name="subject" required>
+                        <option value="">Select Subject</option>
+                        <option value="Mathematics">Mathematics</option>
+                        <option value="Science">Chemistry</option>
+                        <option value="English">English</option>
+                        <option value="English">Kiswahili</option>
+                        <option value="English">Biology</option>
+                        <option value="English">Physics</option>
+                        <option value="English">History</option>
+                        <option value="English">Geography</option>
+                        <option value="English">Bussiness</option>
+                        <option value="English">Agriculture</option>
+                        <option value="English">Computer Studies</option>
+                        <option value="English">Fench</option>
+                        <option value="English">CRE</option>
+                        <option value="English">IRE</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="position-type">Position Type</label>
+                    <select id="position-type" name="position_type" required>
+                        <option value="Full-time">Full-time</option>
+                        <option value="Part-time">Part-time</option>
+                        <option value="Temporary">Temporary</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="requirements">Requirements</label>
+                    <textarea id="requirements" name="requirements" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="closing-date">Closing Date</label>
+                    <input type="date" id="closing-date" name="closing_date">
+                </div>
+                <button type="submit" class="btn-save">Post Vacancy</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+    <script src="school.js"></script>
+    <script src="script.js"></script>
+    <script src="teachers.js"></script>
+    <script src="vacancies.js"></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard - TeacherConnect</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="logo">TeacherConnect</a>
+            <div class="nav-links">
+                <a href="vacancies.html">Vacancies</a>
+                <a href="teachers.html" class="active">My Dashboard</a>
+                <a href="index.html">Home</a>
+                <a href="school.html">Schools</a>
+                <a href="teacher_login.html">Teacher Login</a>
+                <a href="school_login.html">School Login</a>
+                <a href="#" class="btn-logout">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="dashboard-container">
+        <aside class="sidebar">
+            <div class="profile-summary">
+                <img src="../images/teacher-avatar.png" alt="Teacher Avatar" class="profile-pic">
+                <h3>Brian Mwenda</h3>
+                <p>Mathematics Teacher</p>
+            </div>
+            <nav class="dashboard-nav">
+                <a href="#" class="active" data-section="overview">Overview</a>
+                <a href="#" data-section="applications">My Applications</a>
+                <a href="#" data-section="profile">My Profile</a>
+                <a href="#" data-section="qualifications">Qualifications</a>
+                <a href="#" data-section="settings">Settings</a>
+            </nav>
+        </aside>
+
+        <section class="main-content">
+            <!-- Overview Section -->
+            <div id="overview-section" class="dashboard-section active">
+                <h2>Welcome Back, Brian!</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Active Applications</h3>
+                        <p class="stat-value" id="active-apps">5</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Interviews Scheduled</h3>
+                        <p class="stat-value" id="interviews">2</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>New Vacancies</h3>
+                        <p class="stat-value" id="new-vacancies">12</p>
+                    </div>
+                </div>
+
+                <div class="recommended-jobs">
+                    <h3>Recommended For You</h3>
+                    <div id="recommended-jobs-container" class="jobs-grid">
+                        <!-- Recommended jobs will be loaded here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Applications Section -->
+            <div id="applications-section" class="dashboard-section">
+                <h2>My Applications</h2>
+                <div class="application-filters">
+                    <button class="filter-btn active" data-status="all">All</button>
+                    <button class="filter-btn" data-status="submitted">Submitted</button>
+                    <button class="filter-btn" data-status="reviewed">Reviewed</button>
+                    <button class="filter-btn" data-status="interview">Interview</button>
+                </div>
+                <div id="applications-container">
+                    <!-- Applications will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Profile Section -->
+            <div id="profile-section" class="dashboard-section">
+                <h2>My Profile</h2>
+                <form id="teacher-profile-form" class="profile-form">
+                    <div class="form-group">
+                        <label for="first-name">First Name</label>
+                        <input type="text" id="first-name" name="first_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" id="last-name" name="last_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="bio">Professional Bio</label>
+                        <textarea id="bio" name="bio" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn-save">Save Changes</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script src="dashboard.js"></script>
+    <script src="school.js"></script>
+    <script src="script.js"></script>
+    <script src="teachers.js"></script>
+    <script src="vacancies.js"></script>
+</body>
+</html>

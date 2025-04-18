@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vacancies - TeacherConnect</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">TeacherConnect</a>
+            <div class="nav-links">
+                <a href="vacancies.html" class="active">Vacancies</a>
+                <a href="teachers.html">For Teachers</a>
+                <a href="school.html">For Schools</a>
+                <a href="Index.html">Home</a>
+                <a href="teacher_login.html">Teacher Login</a>
+                <a href="school_login.html">School Login</a>
+                <a href="#" class="btn-login">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1 class="page-title">Current Vacancies</h1>
+        
+        <div class="filters">
+            <div class="filter-group">
+                <label for="subject">Subject:</label>
+                <select id="subject">
+                    <option value="">All Subjects</option>
+                    <option value="Mathematics">Mathematics</option>
+                    <option value="Science">Chemistry</option>
+                    <option value="English">English</option>
+                    <option value="English">Kiswahili</option>
+                    <option value="English">Biology</option>
+                    <option value="English">Physics</option>
+                    <option value="English">Bussiness</option>
+                    <option value="English">Agriculture</option>
+                    <option value="English">French</option>
+                    <option value="English">Computer Studies</option>
+                    <option value="English">CRE</option>
+                    <option value="English">IRE</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="location">Location:</label>
+                <select id="location">
+                    <option value="">All Locations</option>
+                    <option value="North">Northern Province</option>
+                    <option value="South">Central Province</option>
+                    <option value="South">Coastal Province</option>
+                    <option value="South">Rift-Valley Province</option>
+                    <option value="South">Eastern Province</option>
+                </select>
+            </div>
+            <button id="apply-filters" class="btn-primary">Apply Filters</button>
+        </div>
+        
+        <div id="vacancies-container" class="vacancies-grid">
+            <!-- Vacancies loaded by JavaScript -->
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+        </div>
+    </footer>
+
+    <script src="vacancies.js"></script>
+    <script src="script.js"></script>
+    <script src="school.js"></script>
+    <script src="teachers.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+<p>&copy; 2025 TeacherConnect. All rights reserved.</p>
+</html>
